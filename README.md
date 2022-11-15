@@ -1,8 +1,8 @@
-[![.github/workflows/main.yaml](https://github.com/schmiddim/action-wget-unzip/actions/workflows/main.yaml/badge.svg?branch=master)](https://github.com/schmiddim/action-wget-unzip/actions/workflows/main.yaml)
+[![.github/workflows/main.yaml](https://github.com/SzymonDukla/action-curl-gunzip/actions/workflows/main.yaml/badge.svg?branch=master)](https://github.com/SzymonDukla/action-curl-gunzip/actions/workflows/main.yaml)
 
-# Download Zip file and extract it action
+# Download GZip file and extract it action
 
-This action downloads a zip file and extracts it to a certain folder
+This action downloads a GZip file and extracts it to a certain folder
 
 ## Inputs
 
@@ -15,8 +15,8 @@ This action downloads a zip file and extracts it to a certain folder
 
 ## Example usage
 ```
-uses: actions/schmiddim-wget-unzip@v1
+uses: actions/szymondukla-curl-gunzip@v2
 with:
-  url: 'https://github.com/hpool-dev/chia-miner/releases/download/1.5.6/HPool-Miner-chia-og-v1.5.6-1-linux.zip'
-  destination: arm-release
+  url: "https://download.db-ip.com/free/dbip-city-lite-2022-11.mmdb.gz"
+  destination: "db.mmdb"
 ```
