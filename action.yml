@@ -10,7 +10,7 @@ inputs:
         required: true    
 
 branding:
-    color: blue
+    color: orange
     icon: download
 runs:
     using: docker

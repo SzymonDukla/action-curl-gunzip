@@ -4,15 +4,15 @@ on:
 jobs:
   wget_zip:
     runs-on: ubuntu-latest
-    name: Test the Zip Functionality
+    name: Test the GZip Functionality
     steps:
       - name: Download and extract
-        uses: schmiddim/action-wget-unzip@master
+        uses: SzymonDukla/action-curl-gunzip@master
         id: hello
         with:
-          url: 'https://github.com/hpool-dev/chia-miner/releases/download/1.5.6/HPool-Miner-chia-og-v1.5.6-1-linux.zip'
-          destination: arm-release
+          url: "https://download.db-ip.com/free/dbip-city-lite-2022-11.mmdb.gz"
+          destination: "db.mmdb"
       - name : Test that the desired folder is present
-        run : "ls -la $GITHUB_WORKSPACE/arm-release"
+        run : "ls -la $GITHUB_WORKSPACE/db.mmdb"
       - name : Test that the zip file is not present
-        run : "if [[ -f artifact.zip ]]; then exit 1; else exit 0; fi"
+        run : "if [[ -f db.mmdb.gz ]]; then exit 1; else exit 0; fi"
