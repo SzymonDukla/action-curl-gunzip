@@ -1,6 +1,6 @@
-name: "schmiddim-wget-unzip"
-author: Michael Schmitt
-description: GitHub action to download + unzip files
+name: "szymondukla-curl-gunzip"
+author: Szymon Dukla
+description: GitHub action to download + gunzip files
 inputs:
     url:
         description: "url that must point to a zip file"

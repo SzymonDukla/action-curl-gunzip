@@ -1,7 +1,6 @@
-FROM alpine:3.10.1
+FROM golang:1.15-rc
 
 RUN apk add zip
 
-
-COPY download-unzip.sh /
-ENTRYPOINT ["/download-unzip.sh"]
+COPY download-gunzip.sh /
+ENTRYPOINT ["/download-gunzip.sh"]

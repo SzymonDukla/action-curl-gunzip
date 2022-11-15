@@ -1,23 +1,21 @@
 #!/bin/sh
 
-DOWNLOAD_NAME=artifact.zip
 if [  "$#" -eq  "2" ]
     then
-        wget -q -O $DOWNLOAD_NAME $1
+        curl -L $1 --output "./$2.gz"
         retVal=$?
         if [ $retVal -ne 0 ]; then
             echo "Error downloading $1"
             exit $retVal
         fi
 
-        unzip -jo -qq ./$DOWNLOAD_NAME  -d ./$2
+        gunzip -d "./$2.gz"
         retVal=$?
         if [ $retVal -ne 0 ]; then
-            echo "Error unzipping from url $1"
-            rm ./$DOWNLOAD_NAME
+            echo "Error gunzipping from url $1"
+            rm "./$2.gz"
             exit $retVal
         fi
-        rm ./$DOWNLOAD_NAME
         exit 
     else
         echo "usage: <url> <download destination>"
